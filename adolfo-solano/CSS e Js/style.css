@@ -42,14 +42,14 @@ header.cabecalho {
     width: 100vw;
     min-height: 80px;
     padding: 10px 0;
-    background-image: var(--cor04);
+    background-image: linear-gradient(to top, var(--cor03), var(--cor06));
     z-index: 10;
    }
 
 h1 {
     padding: 10px 10px 25px 10px;
     font-family: var(--fonte-titulo) ;
-    font-size: 3em;
+    font-size: clamp(1.8rem, 5vh, 3em);
     background-image: radial-gradient( var(--cor01) ,var(--cor02) 12% , var(--cor04) );
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -86,7 +86,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 10px;
+    padding: 120px 10px;
 }
 
 .wrapper {
@@ -101,9 +101,9 @@ main {
     align-items: center;
     overflow: hidden;
     flex-direction: column;
-    width: 90vw;
+    width: 97.8vw;
     max-width: 1800px;
-    height: 60vh;
+    height: calc(100vh -80px);
     max-height: 600px;
 }
 
@@ -135,7 +135,7 @@ nav > a:hover {
     flex-shrink: 0;
     padding: 0 10px;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .slide-content {
@@ -200,9 +200,11 @@ nav > a:hover {
 
 
 footer {
+    position: absolute;
+    bottom: 0;
     text-align: center;
     width: 100vw;
-    background-image: linear-gradient(45deg, #F9EDA3, #D4A850); 
+    background-image: linear-gradient(to bottom, #F9EDA3, #D4A850); 
     padding: 20px 0px;
     margin-top: auto;
 }
