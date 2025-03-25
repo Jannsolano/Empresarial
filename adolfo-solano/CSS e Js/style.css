@@ -1,11 +1,6 @@
 @charset "UTF-8";
 
-@import url('#');
-
-@font-face {
-    font-family:'LinLibertine' ;
-    src: url('font/LinLibertine_aBL.ttf') format('truetype'), url('font/LinLibertine_aBS.ttf') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
   :root {
     --cor01: #F9EDA3;
@@ -14,9 +9,10 @@
     --cor04: #9A7243;
     --cor05: white;
     --cor06: black;
-    --fonte-titulo:'LinLibertine', arial, serif;
+    --sombra: rgba(0, 0, 0, 0.750);
+    --fonte-titulo:"Tinos", arial, serif;
     --fonte-menu: arial, helvetica, sans-serif;
-    --fonte-rodape: arial;
+    --fonte-rodape: "Tinos", arial, serif;
 }
 
 *, *::before, *::after {
@@ -63,12 +59,22 @@ h1 {
     position:relative;
 }
 
+h2 {
+    font-family: var(--fonte-titulo) ;
+    font-size: clamp(0,5em, 5vh, 1,5em);
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, var(--cor01), var(--cor02));
+    margin: 16px;
+    padding: 8px;
+    box-shadow: 2px 2px 10px var(--sombra);
+}
+
 nav{
     font-family: var(--fonte-menu);
     font-weight: bold;
     position:absolute;
-    background-image: linear-gradient(to bottom, #F9EDA3, #D4A850);    
-    box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to bottom, var(--cor01), var(--cor02));    
+    box-shadow: 2px 2px 10px var(--sombra);
     display: flex;
     gap: 35px;
     padding: 1.5px;
@@ -103,7 +109,7 @@ main {
     align-items: center;
     overflow: hidden;
     flex-direction: column;
-    width: 97.8vw;
+    width: 100vw;
     max-width: 1800px;
     height: calc(100vh -80px);
     max-height: 600px;
@@ -143,7 +149,7 @@ nav > a:hover {
 .slide-content {
     border: 1px solid #fff;
     position: relative;
-    box-shadow: var(--cor06) 10px 10px 10px;
+    box-shadow: 2px 2px 10px var(--sombra);
 }
 
 .slide-image {
@@ -202,18 +208,25 @@ nav > a:hover {
 
 
 footer {
+    font-family: var(--fonte-rodape);
+    font-style: normal;
     position: absolute;
     bottom: 0;
     text-align: center;
     width: 100vw;
-    background-image: linear-gradient(to bottom, #F9EDA3, #D4A850); 
+    background-image: linear-gradient(to bottom, var(--cor01), var(--cor02)); 
     padding: 20px 0px;
     margin-top: auto;
 }
 
+iframe {
+    border: 2px solid white;
+    margin: 8px;
+    box-shadow: 2px 2px 10px var(--sombra);
+}
 @media (max-width: 768px) {
     main {
-        padding-top: 120px; /* Evita que fique colado no topo */
+        padding-top: 120px;
         flex-direction: column;
     }
 
