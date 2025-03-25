@@ -23,6 +23,8 @@
     padding: 0;
     margin: 0;
     border: 0;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 body {
@@ -47,9 +49,9 @@ header.cabecalho {
    }
 
 h1 {
-    padding: 10px 10px 25px 10px;
+    padding: 10px 0px 25px 0px;
     font-family: var(--fonte-titulo) ;
-    font-size: clamp(1.8rem, 5vh, 3em);
+    font-size: clamp(1em, 5vh, 3em);
     background-image: radial-gradient( var(--cor01) ,var(--cor02) 12% , var(--cor04) );
     -webkit-background-clip: text;
     -moz-background-clip: text;
