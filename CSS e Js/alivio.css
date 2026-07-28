@@ -304,3 +304,7 @@
     .gauge-row{grid-template-columns:70px 1fr 70px;gap:12px;}
     section{padding:64px 0;}
   }
+
+  img{
+    border-radius: 8px;
+  }
