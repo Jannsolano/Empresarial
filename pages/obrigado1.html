@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obrigado — Alívio Consignado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0908;
+    --bg-alt: #121009;
+    --surface: #1a1611;
+    --surface-line: #2c2418;
+    --gold-light: #f3dfa3;
+    --gold-mid: #cda45a;
+    --gold-dark: #7a5a22;
+    --gold-grad: linear-gradient(120deg, var(--gold-light) 0%, var(--gold-mid) 45%, var(--gold-dark) 100%);
+    --text: #f3ede0;
+    --text-muted: #a89d88;
+    --text-faint: #6f6656;
+    --radius: 14px;
+    --serif: 'Fraunces', serif;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  section{padding:64px 0;}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;letter-spacing:-0.01em;}
+  .gold-text{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .eyebrow{
+    font-family:var(--mono);text-transform:uppercase;letter-spacing:0.14em;font-size:12px;
+    color:var(--gold-mid);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold-mid);}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--gold-grad);color:#20160a;font-weight:600;font-size:16px;
+    padding:18px 34px;border-radius:999px;border:none;cursor:pointer;text-decoration:none;
+    box-shadow:0 8px 30px -8px rgba(205,164,90,0.55);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px -6px rgba(205,164,90,0.7);}
+  .btn-sub{display:block;font-family:var(--mono);font-size:11px;color:var(--text-faint);margin-top:12px;letter-spacing:0.04em;}
+
+  /* CONFIRMATION HERO */
+  .confirm{text-align:center;padding-top:96px;}
+  .seal{
+    width:76px;height:76px;border-radius:50%;
+    border:1.5px solid var(--gold-mid);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 30px;
+  }
+  .seal svg{width:30px;height:30px;stroke:var(--gold-mid);}
+  .confirm h1{font-size:clamp(28px,4.6vw,44px);max-width:600px;margin:0 auto 18px;}
+  .confirm p.lead{font-size:17px;color:var(--text-muted);max-width:480px;margin:0 auto 40px;}
+
+  /* ORDER SUMMARY */
+  .order-box{
+    background:var(--surface);border:1px solid var(--surface-line);
+    border-radius:var(--radius);padding:0;overflow:hidden;text-align:left;
+  }
+  .order-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:20px 28px;border-bottom:1px solid var(--surface-line);
+    font-size:14.5px;
+  }
+  .order-row:last-child{border-bottom:none;}
+  .order-row .label{color:var(--text-muted);}
+  .order-row .value{font-family:var(--mono);color:var(--text);}
+  .order-row .value.gold{color:var(--gold-mid);}
+
+  /* STEPS */
+  .steps-title{text-align:center;margin-bottom:44px;}
+  .steps-title h2{font-size:clamp(24px,3.2vw,32px);max-width:520px;margin:0 auto;}
+  .steps{display:flex;flex-direction:column;gap:0;}
+  .step{
+    display:grid;grid-template-columns:56px 1fr;gap:20px;
+    padding:26px 0;border-top:1px solid var(--surface-line);
+  }
+  .step:last-child{border-bottom:1px solid var(--surface-line);}
+  .step-idx{font-family:var(--serif);font-size:28px;color:transparent;-webkit-text-stroke:1px var(--gold-mid);}
+  .step h3{font-size:17.5px;margin-bottom:6px;}
+  .step p{color:var(--text-muted);font-size:14.5px;margin:0;}
+
+  /* SUPPORT */
+  .support-box{
+    background:var(--bg-alt);border:1px solid var(--surface-line);border-radius:var(--radius);
+    padding:32px;text-align:center;
+  }
+  .support-box h3{font-size:18px;margin-bottom:10px;}
+  .support-box p{color:var(--text-muted);font-size:14.5px;margin:0 0 20px;}
+
+  footer{border-top:1px solid var(--surface-line);padding:36px 0 56px;text-align:center;}
+  footer p{font-size:12px;color:var(--text-faint);max-width:520px;margin:0 auto 8px;line-height:1.7;}
+
+  @media(max-width:600px){
+    section{padding:48px 0;}
+    .order-row{flex-direction:column;align-items:flex-start;gap:4px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- CONFIRMATION -->
+  <section class="confirm">
+    <div class="wrap">
+      <div class="seal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <span class="eyebrow">compra confirmada</span>
+      <h1>Seu acesso ao <span class="gold-text">Alívio Consignado</span> já está liberado</h1>
+      <p class="lead">Enviamos os detalhes de acesso para o seu e-mail. Confira também a caixa de spam, só por garantia.</p>
+      <a href="https://delivery.clickmax.io" class="btn">Acessar meu conteúdo agora</a>
+      <span class="btn-sub">acesso imediato, direto no seu e-mail</span>
+    </div>
+  </section>
+
+  <!-- ORDER SUMMARY -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="order-box">
+        <div class="order-row"><span class="label">Produto</span><span class="value">Alívio Consignado</span></div>
+        <div class="order-row"><span class="label">Valor pago</span><span class="value gold">R$97,00</span></div>
+        <div class="order-row"><span class="label">Status</span><span class="value gold">Aprovado</span></div>
+        <div class="order-row"><span class="label">Envio do acesso</span><span class="value">e-mail cadastrado na compra, verifique sua inbox</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section style="background:var(--bg-alt);border-top:1px solid var(--surface-line);border-bottom:1px solid var(--surface-line);">
+    <div class="wrap">
+      <div class="steps-title">
+        <span class="eyebrow">próximos passos</span>
+        <h2>O que fazer agora para começar a aliviar sua parcela</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-idx">01</span>
+          <div><h3>Abra o e-mail de acesso</h3><p>Chega em poucos minutos, com o link para o conteúdo completo.</p></div>
+        </div>
+        <div class="step">
+          <span class="step-idx">02</span>
+          <div><h3>Faça o diagnóstico do seu contrato</h3><p>Separe seu contrato de consignado em mãos para seguir o passo a passo.</p></div>
+        </div>
+        <div class="step">
+          <span class="step-idx">03</span>
+          <div><h3>Aplique a rota de redução</h3><p>Siga o método na ordem indicada para sentir o efeito já na próxima parcela.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>Este material tem caráter educacional e não substitui aconselhamento financeiro individual. Resultados variam de acordo com o contrato de cada pessoa.</p>
+      <p>© Alívio Consignado. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
