@@ -47,7 +47,7 @@
     background-clip:text;
     color:transparent;
   }
-  .btn{
+  .cm-checkout-button{
     display:inline-flex;
     align-items:center;
     justify-content:center;
@@ -65,8 +65,8 @@
     box-shadow:0 8px 30px -8px rgba(205,164,90,0.55);
     transition:transform .25s ease, box-shadow .25s ease;
   }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px -6px rgba(205,164,90,0.7);}
-  .btn-sub{
+  .cm-checkout-button:hover{transform:translateY(-2px);box-shadow:0 12px 36px -6px rgba(205,164,90,0.7);}
+  .cm-checkout-button-sub{
     display:block;
     font-family:var(--mono);
     font-size:11px;
@@ -338,14 +338,14 @@
     }
   }
   /* Aplicação da animação na classe do botão */
-  .btn-pulse {
+  .cm-checkout-button-pulse {
     animation: goldPulse 3.5s infinite;
     position: relative;
     overflow: hidden;
   }
 
   /* Efeito extra: Passagem de luz rápida no botão */
-  .btn-pulse::after {
+  .cm-checkout-button-pulse::after {
     content: '';
     position: absolute;
     top: -50%;
