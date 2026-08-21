@@ -74,6 +74,25 @@
     margin-top:28px;
     letter-spacing:0.04em;
   }
+  .btn-oferta-gold{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:var(--gold-grad);
+    color:#20160a;
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:16px;
+    padding:18px 34px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+    box-shadow:0 8px 30px -8px rgba(205,164,90,0.55);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-oferta-gold:hover{transform:translateY(-2px);box-shadow:0 12px 36px -6px rgba(205,164,90,0.7);}
 
   /* image placeholder component */
   .img-slot{
