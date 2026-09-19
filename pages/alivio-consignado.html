@@ -362,7 +362,7 @@ cxs('track', 'page_view');
         </div>
         <div class="field">
           <label class="caption-upper" for="f-whats">WhatsApp</label>
-          <input type="tel" id="f-whats" name="telephone" data-cx-field="telephone" placeholder="(DDD) 90000-0000" required />
+          <input type="tel" id="f-whats" name="telephone" data-cx-field="telephone" inputmode="numeric" maxlength="15" placeholder="(DDD) 90000-0000" required />
         </div>
         <div class="checkrow">
           <input type="checkbox" id="f-lgpd" name="lgpdApproved" data-cx-field="lgpdApproved" required />
@@ -427,6 +427,22 @@ cxs('track', 'page_view');
     entries.forEach(e => stickyCta.classList.toggle('show', !e.isIntersecting));
   }, { threshold: 0 });
   if (hero) heroIo.observe(hero);
+
+  const phoneInput = document.getElementById('f-whats');
+  phoneInput.addEventListener('input', () => {
+    const digits = phoneInput.value.replace(/\D/g, '').slice(0, 11);
+    if (digits.length > 10) {
+      phoneInput.value = digits.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+    } else if (digits.length > 6) {
+      phoneInput.value = digits.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+    } else if (digits.length > 2) {
+      phoneInput.value = digits.replace(/^(\d{2})(\d{0,4})/, '($1) $2');
+    } else if (digits.length > 0) {
+      phoneInput.value = digits.replace(/^(\d{0,2})/, '($1');
+    } else {
+      phoneInput.value = '';
+    }
+  });
 </script>
 
 </body>
